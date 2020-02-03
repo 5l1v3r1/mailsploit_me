@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 from email.utils import make_msgid, formataddr
 
 from lazyme.string import color_print
-from vals import nato_example
+from vals import nato_example, nato_example2_body, nato_example2_subject
 from email.message import EmailMessage
 from email.headerregistry import Address
 
@@ -18,13 +18,14 @@ spoofed_from = "aaaa@pwr.edu.pl"
 email_to = 'wliebert0316@gems.sw.rim.net'
 
 msg = MIMEMultipart('html')
-msg['Subject'] = 'Our family reunion'
+msg['Subject'] = nato_example2_subject  # 'Our family reunion'
 msg['From'] = formataddr(('NATO 1', '<nato@nato.com>'))
 msg['To'] = email_to
 msg.preamble = 'Our family reunion'
 asparagus_cid = make_msgid()
 
-part1 = MIMEText(nato_example, 'html', _charset='utf-8')
+# part1 = MIMEText(nato_example2_body, 'html', _charset='utf-8')
+part1 = MIMEMultipart()
 msg.attach(part1)
 
 SMTP_user = 'user@localhost'
